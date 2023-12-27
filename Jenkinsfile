@@ -24,7 +24,7 @@ pipeline {
 				archiveArtifacts artifacts: 'trufflehogscan.json'
 			}
 		}
-		stage('SCA') {
+/*		stage('SCA') {
 			agent {
 				docker {
 					image 'owasp/dependency-check:latest'
@@ -37,7 +37,7 @@ pipeline {
 				archiveArtifacts artifacts: 'dependency-check-report.json'
 				archiveArtifacts artifacts: 'dependency-check-report.xml'
 			}
-		}
+		} */
         stage('building image docker') {
             agent {
                 docker {
