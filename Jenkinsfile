@@ -31,6 +31,7 @@ pipeline {
 					args '-v /var/run/docker.sock:/var/run/docker.sock --entrypoint='
 				}
 			}
+			
 			steps {
 				sh '/usr/share/dependency-check/bin/dependency-check.sh --scan . --project "VulnerableJavaWebApplication" --format ALL'
 				archiveArtifacts artifacts: 'dependency-check-report.html'
